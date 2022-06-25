@@ -1,0 +1,16 @@
+examples/mnist/convert_mnist_data.cpp: In function ‘void convert_dataset(const char*, const char*, const char*, const string&)’:
+examples/mnist/convert_mnist_data.cpp:120:44: warning: ‘__builtin___snprintf_chk’ output may be truncated before the last format character [-Wformat-truncation=]
+  120 |     snprintf(key_cstr, kMaxKeyLength, "%08d", item_id);
+      |                                            ^
+In file included from /usr/include/stdio.h:867,
+                 from /usr/include/c++/9/cstdio:42,
+                 from /usr/include/c++/9/ext/string_conversions.h:43,
+                 from /usr/include/c++/9/bits/basic_string.h:6493,
+                 from /usr/include/c++/9/string:55,
+                 from /usr/include/gflags/gflags.h:81,
+                 from examples/mnist/convert_mnist_data.cpp:9:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:67:35: note: ‘__builtin___snprintf_chk’ output between 9 and 11 bytes into a destination of size 10
+   67 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   68 |        __bos (__s), __fmt, __va_arg_pack ());
+      |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
